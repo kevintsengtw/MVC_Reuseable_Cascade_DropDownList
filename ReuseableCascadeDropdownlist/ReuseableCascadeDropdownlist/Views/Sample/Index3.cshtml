@@ -1,0 +1,93 @@
+﻿@model ReuseableCascadeDropdownlist.ViewModels.SampleViewModel
+@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Sample - 設定已選擇項目</h2>
+
+<form class="form-horizontal well">
+    <fieldset>
+        <legend>Normal</legend>
+        <div class="control-group">
+            <label class="control-label" for="CityDDL">縣市</label>
+            <div class="controls">
+                <select id="CityDDL"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="CountyDDL">鄉鎮市區</label>
+            <div class="controls">
+                <select id="CountyDDL"></select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<form class="form-horizontal well">
+    <fieldset>
+        <legend>Personal</legend>
+        <div class="control-group">
+            <label class="control-label" for="PersonalCityDDL">縣市</label>
+            <div class="controls">
+                <select id="PersonalCityDDL"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="PersonalCountyDDL">鄉鎮市區</label>
+            <div class="controls">
+                <select id="PersonalCountyDDL"></select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<form class="form-horizontal well">
+    <fieldset>
+        <legend>Company</legend>
+        <div class="control-group">
+            <label class="control-label" for="CompanyCityDDL">縣市</label>
+            <div class="controls">
+                <select id="CompanyCityDDL"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="CompanyCountyDDL">鄉鎮市區</label>
+            <div class="controls">
+                <select id="CompanyCountyDDL"></select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@section scripts
+{
+    @Html.Partial("_TaiwanZipCode")
+    <script type="text/javascript">
+        $(function() {
+            SetCascadeDropDownList();
+        });
+
+        function SetCascadeDropDownList() {
+            TaiwanZipCode.Settings({
+                CityID: '#CityDDL',
+                CountyID: '#CountyDDL',
+                SelectedCity: '@ViewBag.SelectedCity',
+                SelectedCounty: '@ViewBag.SelectedCounty'                
+            });
+
+            TaiwanZipCode.Settings({
+                CityID: '#PersonalCityDDL',
+                CountyID: '#PersonalCountyDDL',
+                SelectedCity: '@Model.CityName',
+                SelectedCounty: '@Model.CountyCode'
+            });
+
+            TaiwanZipCode.Settings({
+                CityID: '#CompanyCityDDL',
+                CountyID: '#CompanyCountyDDL',
+                SelectedCity: '台南市',
+                SelectedCounty: '710'
+            });
+        }
+    </script>
+}

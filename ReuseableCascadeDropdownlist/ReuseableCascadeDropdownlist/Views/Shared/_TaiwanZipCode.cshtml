@@ -1,0 +1,11 @@
+﻿<script src="~/Scripts/TaiwanZipCode.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var ActionUrls =
+        {
+            GetCityDropDownlist: '@Url.Action("GetCityDropDownlist", "ZipCode", new { Area = "" })',
+            GetCountyDropDownlist: '@Url.Action("GetCountyDropDownlist", "ZipCode", new { Area = "" })'
+        };
+        TaiwanZipCode.Initialize(ActionUrls);
+    });
+</script>

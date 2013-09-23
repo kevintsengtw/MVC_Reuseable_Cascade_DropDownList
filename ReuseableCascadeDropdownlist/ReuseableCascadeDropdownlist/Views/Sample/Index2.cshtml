@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Sample - 兩組資料</h2>
+
+<form class="form-horizontal well">
+    <fieldset>
+        <legend>Personal</legend>
+        <div class="control-group">
+            <label class="control-label" for="PersonalCityDDL">縣市</label>
+            <div class="controls">
+                <select id="PersonalCityDDL"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="PersonalCountyDDL">鄉鎮市區</label>
+            <div class="controls">
+                <select id="PersonalCountyDDL"></select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<form class="form-horizontal well">
+    <fieldset>
+        <legend>Company</legend>
+        <div class="control-group">
+            <label class="control-label" for="CompanyCityDDL">縣市</label>
+            <div class="controls">
+                <select id="CompanyCityDDL"></select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="CompanyCountyDDL">鄉鎮市區</label>
+            <div class="controls">
+                <select id="CompanyCountyDDL"></select>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+@section scripts
+{
+    @Html.Partial("_TaiwanZipCode")
+    <script type="text/javascript">
+        $(function () {
+            TaiwanZipCode.Settings({
+                CityID: '#PersonalCityDDL',
+                CountyID: '#PersonalCountyDDL'
+            });
+            TaiwanZipCode.Settings({
+                CityID: '#CompanyCityDDL',
+                CountyID: '#CompanyCountyDDL'
+            });
+        });
+    </script>
+
+}

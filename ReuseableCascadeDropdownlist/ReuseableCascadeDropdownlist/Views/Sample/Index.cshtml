@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sample - Normal</h2>
+
+<form class="form-horizontal well">
+    <div class="control-group">
+        <label class="control-label" for="CityDDL">縣市</label>
+        <div class="controls">
+            <select id="CityDDL"></select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="CountyDDL">鄉鎮市區</label>
+        <div class="controls">
+            <select id="CountyDDL"></select>
+        </div>
+    </div>
+</form>
+
+@section scripts
+{
+    @Html.Partial("_TaiwanZipCode")
+    <script type="text/javascript">
+        $(function () {
+            var options = {
+                CityID: '#CityDDL',
+                CountyID: '#CountyDDL'
+            };
+            TaiwanZipCode.Settings(options);
+        });
+    </script>
+
+}
