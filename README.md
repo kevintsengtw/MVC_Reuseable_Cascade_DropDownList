@@ -16,5 +16,6 @@ Bootstrap 2.3.2
 專案範本：ASP.NET MVC 4 with Bootstrap Layout
 
 部落格文章連結：
+[http://kevintsengtw.blogspot.tw/2013/09/aspnet-mvc-reuseable-cascade.html](http://kevintsengtw.blogspot.tw/2013/09/aspnet-mvc-reuseable-cascade.html "ASP.NET MVC 建立可重複使用的縣市鄉鎮市區連動下拉選單 (Reuseable Cascade DropDownList)")
 
 **by Kevin Tseng - [http://kevintsengtw.blogspot.tw](http://kevintsengtw.blogspot.tw "mrkt 的程式學習筆記")**
